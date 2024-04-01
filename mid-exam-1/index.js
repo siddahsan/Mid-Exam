@@ -88,15 +88,6 @@ function addToCart(name) {
   }
 }
 
-
-function removeFromCart(name) {
-  const index = cart.findIndex(item => item.name === name);
-  if (index !== -1) {
-    cart.splice(index, 1);
-    renderCartItems();
-  }
-}
-
 container.addEventListener("click", event => {
   if (event.target.classList.contains("add-to-cart-btn")) {
     const productName = event.target.parentNode.querySelector("h2").textContent;
@@ -117,12 +108,6 @@ cartItemsContainer.addEventListener("input", event => {
   }
 });
 
-cartItemsContainer.addEventListener("click", event => {
-  if (event.target.classList.contains("remove-btn")) {
-    const productName = event.target.dataset.name;
-    removeFromCart(productName);
-  }
-});
 
 
 products.forEach((product) => {
